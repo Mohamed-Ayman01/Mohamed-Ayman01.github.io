@@ -8,5 +8,5 @@
   * Animation
   * Font-Awesome Icons
 
-[Link To View Temp](https://mohamed-ayman01.github.io/Team%20template
+Link To View [Live Demo](https://mohamed-ayman01.github.io/Team%20template
 "View Website")
