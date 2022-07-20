@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #222;
+  color: #fff;
+  font-size: 16px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  perspective: 600px;
+  overflow: hidden;
+}
+
+ul {
+  list-style: none;
+}
+
+.box {
+  top: -2%;
+  left: -2%;
+  position: fixed;
+}
+
+.particle {
+  display: block;
+  width: 2px;
+  height: 2px;
+  background-color: #ffc107;
+  position: absolute;
+  box-shadow: 0 0 5px #ffc107, 0 0 10px #ffc107;
+  transition: 1000ms ease-in-out;
+}
+
+.card {
+  width: 300px;
+  height: 400px;
+  padding: 1rem;
+  /* background-color: rgb(126 126 126 / 40%); */
+  background-color: #333;
+  transform-style: preserve-3d;
+  transition: transform 1000ms ease-in-out;
+  position: relative;
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+}
+
+.card .front-face {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+  backface-visibility: hidden;
+  text-align: center;
+}
+
+.card .front-face h2 {
+  font-size: 2.6rem;
+}
+
+.card .front-face p {
+  font-size: 1.1rem;
+  color: #ffc107;
+  text-shadow: 0 0 2px #ffc107, 0 0 5px #ffc107;
+}
+
+.card .back-face {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: space-between;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+}
+
+.card .back-face h2 {
+  margin: 1rem 0;
+  font-size: 2.6rem;
+}
+
+.card .back-face .links {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card .back-face .links li {
+  font-size: 2rem;
+  margin: 0.8rem;
+}
+
+.card .back-face .links li a {
+  padding: 0.5rem;
+  display: block;
+  color: #fff;
+  transition: all 300ms ease-in-out;
+  transition-property: text-shadow, color;
+}
+
+.card .back-face .links li a:hover {
+  color: #ffc107;
+  text-shadow: 0 0 5px #ffc107, 0 0 10px #ffc107;
+}
