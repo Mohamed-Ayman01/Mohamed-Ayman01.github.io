@@ -1,21 +1,30 @@
-function getRandomInteger(start, range) {
-  let num = Math.floor(Math.random() * range + start);
+const cursor = document.querySelector(".cursor");
 
-  while (num > range) num = Math.floor(Math.random * range + start);
+window.onmousemove = (e) => {
+  cursor.style.top = `${e.clientY - cursor.clientWidth / 2}px`;
+  cursor.style.left = `${e.clientX - cursor.clientHeight / 2}px`;
+};
 
-  return num;
+const githubLink = document.querySelector(".socials a");
+
+function seperateLetterOf(el) {
+  let elText = el.textContent.split("");
+
+  el.textContent = ""
+
+  let iterator = 1;
+
+  for (l of elText) {
+    let span = document.createElement("span");
+
+    span.classList.add("letter", `letter-${iterator}`);
+
+    span.textContent = l;
+
+    el.append(span);
+
+    iterator++;
+  }
 }
 
-let particles = document.querySelectorAll(".particle");
-
-function randomizeParticles() {
-  particles.forEach(
-    (span) =>
-      (span.style.transform = `translate(${getRandomInteger(
-        0,
-        window.innerWidth,
-      )}px,${getRandomInteger(0, window.innerHeight)}px)`),
-  );
-}
-
-setInterval(randomizeParticles, 1500);
+seperateLetterOf(githubLink);
