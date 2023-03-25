@@ -1,3 +1,11 @@
+function getRandomInteger(start, range) {
+  let num = Math.floor(Math.random() * range + start);
+
+  while (num > range) num = Math.floor(Math.random * range + start);
+
+  return num;
+}
+
 const cursor = document.querySelector(".cursor");
 
 window.onmousemove = (e) => {
@@ -7,24 +15,27 @@ window.onmousemove = (e) => {
 
 const githubLink = document.querySelector(".socials a");
 
-function seperateLetterOf(el) {
-  let elText = el.textContent.split("");
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-  el.textContent = ""
+githubLink.addEventListener("mouseover", (e) => {
+  let iter = 0;
 
-  let iterator = 1;
+  const handler = setInterval(() => {
+    e.target.innerText = e.target.innerText
+      .split("")
+      .map((l, index) => {
+        if (index < iter) {
+          return e.target.dataset.value[index];
+        }
 
-  for (l of elText) {
-    let span = document.createElement("span");
+        return letters[Math.floor(Math.random() * 26)];
+      })
+      .join("");
 
-    span.classList.add("letter", `letter-${iterator}`);
+    if (iter >= e.target.dataset.value.length) {
+      clearInterval(handler);
+    }
 
-    span.textContent = l;
-
-    el.append(span);
-
-    iterator++;
-  }
-}
-
-seperateLetterOf(githubLink);
+    iter += 1;
+  }, 30);
+});

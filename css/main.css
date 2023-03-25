@@ -21,11 +21,17 @@ body {
 
 a {
   cursor: none;
+  text-decoration: none;
+}
+
+::selection {
+  color: black;
+  background-color:white
 }
 
 .cursor {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   position: absolute;
   top: -40px;
   left: -40px;
@@ -35,11 +41,12 @@ a {
 }
 
 h2 {
-  width: fit-content;
+  padding: 0 .5rem;
   position: relative;
-  font-size: clamp(2rem, 7vh , 5rem);
+  font-size: clamp(2rem, 7vw , 5rem);
   text-align: center;
   letter-spacing: 4px;
+  line-height: 1.5;
   text-transform: uppercase;
 }
 
@@ -70,57 +77,19 @@ h2::before {
   position: absolute;
   bottom: 1rem;
   left: 50%;
+  font-size: clamp(1.2rem , 8vw,2rem);
   transform: translate(-50%);
 }
 
 .socials a {
   position: relative;
-  font-size: 1.3rem;
   letter-spacing: 3px;
   text-decoration: none;
   color: white;
-}
-
-.socials a span {
-  position: relative;
-  top: 0;
-  left: 0;
   transition: all 500ms ease;
+  text-transform: uppercase;
 }
 
-.socials a:hover span.letter-1 {
-  top: -24px;
-  left: -8px;
-}
-.socials a:hover span.letter-2 {
-  top: 16px;
-  left: -3px;
-}
-.socials a:hover span.letter-3 {
-  top: -30px;
-  left: 100px;
-}
-.socials a:hover span.letter-4 {
-  top: 2px;
-  left: 12px;
-}
-.socials a:hover span.letter-5 {
-  top: -26px;
-  left: 27px;
-}
-.socials a:hover span.letter-6 {
-  top: -21px;
-  left: 41px;
-}
-.socials a:hover span.letter-7 {
-  top: -38px;
-  left: 51px;
-}
-.socials a:hover span.letter-8 {
-  top: -3px;
-  left: 61px;
-}
-.socials a:hover span.letter-9 {
-  top: -30px;
-  left: 68px;
+.socials i {
+  margin-right: 1rem;
 }
