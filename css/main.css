@@ -81,7 +81,7 @@ h2::before {
   position: absolute;
   bottom: 1rem;
   left: 50%;
-  font-size: clamp(1.2rem , 8vw,2rem);
+  font-size: clamp(1.2rem , 6vw,2rem);
   transform: translate(-50%);
 }
 
