@@ -40,6 +40,10 @@ a {
   z-index: -1;
 }
 
+.div {
+  overflow: hidden;
+}
+
 h2 {
   padding: 0 .5rem;
   position: relative;
