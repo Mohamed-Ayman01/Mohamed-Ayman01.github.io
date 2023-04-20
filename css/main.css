@@ -68,11 +68,9 @@ h2::before {
 
 @keyframes move {
   0% {
-    transform: skew(-5deg);
     left: -100%;
   }
   100% {
-    transform: skew(5deg);
     left: 100%;
   }
 }
