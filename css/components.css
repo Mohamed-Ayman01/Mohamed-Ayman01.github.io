@@ -1,0 +1,39 @@
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+@media (min-width: 1400px) {
+  .container {
+    width: 1200px;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: var(--second-clr);
+  text-decoration: none;
+}
+
+button {
+  outline: none;
+}
+
+.main-btn {
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  border: 2px solid var(--second-clr);
+  color: var(--second-clr);
+  cursor: pointer;
+  transition: all .3s ease;
+  transition-property: color, background-color;
+}
+
+.main-btn:hover {
+  color: var(--main-clr);
+  background-color: var(--second-clr);
+}

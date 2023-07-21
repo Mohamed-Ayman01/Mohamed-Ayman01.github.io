@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Roboto:wght@300;400&display=swap');
+@import url('components.css');
+
 * {
   margin: 0;
   padding: 0;
@@ -6,92 +9,167 @@
   -webkit-box-sizing: border-box;
 }
 
+:root {
+  --special-clr: #8F00FF;
+  --special-clr-dark: #310653;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
+  font-family: "open sans";
+}
+
+body.dark {
+  --main-clr: #242424;
+  --main-clr-2: #333333;
+  --second-clr: white;
+  --second-clr-2: #bcbcbc44;
+  color: white;
+  background-color: var(--main-clr);
+}
+
+body.light {
+  --main-clr: white;
+  --main-clr-2: #bcbcbc44;
+  --second-clr: #242424;
+  --second-clr-2: #333333;
+  color: black;
+  background-color: var(--main-clr);
+}
+
+header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-transform: capitalize;
+}
+
+nav {
+  border-bottom: 1px solid var(--main-clr-2);
+}
+
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav img {
+  width: 50px;
+  height: 50px;
+  background-color: var(--main-clr-light);
+}
+
+nav p {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav ul {
+  display: flex;
+  justify-self: flex-end;
+}
+
+nav ul li a {
+  display: block;
+  padding: 1.5rem 1rem;
+  transition: all .3s ease;
+  transition-property: color, background-color;
+}
+
+nav ul li a.active {
+  color: var(--main-clr);
+  background-color: var(--second-clr)
+}
+
+nav ul li a:hover:not(.active) {
+  background-color: var(--main-clr-2)
+}
+
+nav .switch-btn {
+  width: 150px;
+  height: 40px;
   position: relative;
-  min-height: 100vh;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: .3s;
+  border: 2px solid transparent;
+  background-color: var(--second-clr);
+}
+
+nav .switch-btn i {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  padding: .4rem;
+  border-radius: 50%;
+  background-color: var(--main-clr);
+  color: var(--second-clr);
+  transition: left .5s;
+}
+
+nav .burger-menu {
+  display: none;
+}
+
+section.landing {
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Trebuchet ms", sans-serif;
-  background-color: #000;
-  color: #fff;
-  overflow: hidden;
-  cursor: none;
 }
 
-a {
-  cursor: none;
-  text-decoration: none;
+section.landing .container {
+  display: grid;
+  grid-template-columns: 100px 2fr 1fr;
+  grid-gap: 1rem;
 }
 
-::selection {
-  color: black;
-  background-color:white
-}
-
-.cursor {
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  top: -40px;
-  left: -40px;
-  background-color: transparent;
-  border: 1px solid white;
-  z-index: -1;
-}
-
-.div {
-  overflow: hidden;
-}
-
-h2 {
-  padding: 0 .5rem;
-  position: relative;
-  font-size: clamp(2rem, 7vw , 5rem);
+section.landing .socials a {
   text-align: center;
-  letter-spacing: 4px;
-  line-height: 1.5;
-  text-transform: uppercase;
-}
-
-h2::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 110%;
-  background-color: #fff;
-  animation: move 3s ease-in-out infinite 0s alternate;
-  mix-blend-mode: difference;
-}
-
-@keyframes move {
-  0% {
-    left: -100%;
-  }
-  100% {
-    left: 100%;
-  }
-}
-
-.socials {
-  position: absolute;
-  bottom: 1rem;
-  left: 50%;
-  font-size: clamp(1.2rem , 6vw,2rem);
-  transform: translate(-50%);
-}
-
-.socials a {
-  position: relative;
-  letter-spacing: 3px;
-  text-decoration: none;
+  font-size: 1.4rem;
   color: white;
-  transition: all 500ms ease;
-  text-transform: uppercase;
+  display: block;
+  margin: 1.5rem;
+  padding: .5rem;
+  background-color: var(--special-clr);
+  box-shadow: 5px 5px var(--second-clr);
+  transform: translate(-5px, -5px);
+  transition: all .3s ease;
+  transition-property: transform, box-shadow;
 }
 
-.socials i {
-  margin-right: 1rem;
+section.landing .socials a:hover {
+  transform: translate(0, 0);
+  box-shadow: 0 0 var(--special-clr-dark);
+}
+
+section.landing .text h1 {
+  font-size: 5rem;
+}
+
+section.landing .text p {
+  font-size: 1.2rem;
+}
+
+section.landing .text p span {
+  color: var(--special-clr);
+  font-weight: bold;
+}
+
+section.landing .text .main-btn {
+  margin-top: 2rem;
+}
+
+section.landing img {
+  max-width: 100%;
+}
+
+.about {
+  height: 800px;
+  background-color: var(--main-clr-2);
 }
