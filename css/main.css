@@ -41,63 +41,84 @@ body.light {
 }
 
 header {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   text-transform: capitalize;
 }
 
 nav {
+  position: relative;
   border-bottom: 1px solid var(--main-clr-2);
 }
 
 nav .container {
+  height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-nav img {
-  width: 50px;
-  height: 50px;
-  background-color: var(--main-clr-light);
-}
-
 nav p {
-  font-size: 1.5rem;
+  font-size: clamp(1.5rem, 1.2rem, 10vw);
   font-weight: bold;
 }
 
-nav ul {
-  display: flex;
-  justify-self: flex-end;
+@media (max-width: 567px) {
+  nav p  {
+    font-size: 1.2rem;
+  }
 }
 
-nav ul li a {
-  display: block;
-  padding: 1.5rem 1rem;
+nav .links {
+  display: flex;
+  height: 100%;
+}
+
+@media (max-width: 992px) {
+  nav .links {
+    display: none;
+  }
+}
+
+nav .links li a {
+  height: 100%;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
   transition: all .3s ease;
   transition-property: color, background-color;
 }
 
-nav ul li a.active {
+nav .links li a.active {
   color: var(--main-clr);
   background-color: var(--second-clr)
 }
 
-nav ul li a:hover:not(.active) {
+nav .links li a:hover:not(.active) {
   background-color: var(--main-clr-2)
+}
+
+nav .btns {
+  display: flex;
 }
 
 nav .switch-btn {
   width: 150px;
   height: 40px;
+  margin-right: 1rem;
   position: relative;
   border-radius: 30px;
   cursor: pointer;
   transition: .3s;
   border: 2px solid transparent;
   background-color: var(--second-clr);
+}
+
+@media (max-width: 500px) {
+  nav .btns .switch-btn {
+    display: none;
+  }
 }
 
 nav .switch-btn i {
@@ -114,6 +135,99 @@ nav .switch-btn i {
 
 nav .burger-menu {
   display: none;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: 1px solid var(--second-clr);
+  color: var(--second-clr);
+  background-color: var(--main-clr);
+}
+
+nav .burger-menu:hover {
+  color: var(--main-clr);
+  background-color: var(--second-clr);
+}
+
+@media (max-width: 992px) {
+  nav .burger-menu {
+    display: block;
+  }
+}
+
+nav .menu {
+  width: 100%;
+  height: 100vh;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: var(--main-clr);
+  z-index: 10;
+  opacity: .98;
+  transition: right .5s ease-in-out;
+}
+
+nav .menu.show {
+  right: 0;
+}
+
+nav .menu button.exit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background-color: red;
+  color: white;
+  border: none;
+}
+
+nav .menu .switch-btn {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+}
+
+nav .menu li {
+  align-self: stretch;
+  margin: 1rem 0;
+}
+
+nav .menu li a {
+  font-size: 1.5rem;
+  position: relative;
+  padding: 1rem;
+  color: var(--second-clr);
+  transition: color .5s ease;
+  overflow: hidden;
+}
+
+nav .menu li a:hover {
+  color: var(--main-clr);
+}
+
+nav .menu li a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--second-clr);
+  transition: all .5s ease;
+  transition-property: left;
+  z-index: -1;
+}
+
+nav .menu li a:hover::before {
+  left: 0;
 }
 
 section.landing {
@@ -129,11 +243,23 @@ section.landing .container {
   grid-gap: 1rem;
 }
 
+@media (max-width: 992px) {
+  section.landing .container {
+    grid-template-columns: 100px 1fr;
+  }
+}
+
+@media (max-width: 545px) {
+  section.landing .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr;
+  }
+}
+
 section.landing .socials a {
   text-align: center;
   font-size: 1.4rem;
   color: white;
-  display: block;
   margin: 1.5rem;
   padding: .5rem;
   background-color: var(--special-clr);
@@ -141,6 +267,21 @@ section.landing .socials a {
   transform: translate(-5px, -5px);
   transition: all .3s ease;
   transition-property: transform, box-shadow;
+}
+
+@media (max-width: 545px) {
+  section.landing .socials {
+    order: 2;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  section.landing .socials a {
+    width: 50px;
+    height: 50px;
+    margin: 0 1rem;
+  }
 }
 
 section.landing .socials a:hover {
@@ -167,6 +308,12 @@ section.landing .text .main-btn {
 
 section.landing img {
   max-width: 100%;
+}
+
+@media (max-width: 992px) {
+  section.landing img {
+    display: none;
+  }
 }
 
 .about {
