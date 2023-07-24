@@ -3,6 +3,10 @@
   margin: 0 auto;
 }
 
+.sect {
+  padding: 2rem 0;
+}
+
 @media (min-width: 1400px) {
   .container {
     width: 1200px;
@@ -17,6 +21,10 @@ a {
   display: block;
   color: var(--second-clr);
   text-decoration: none;
+}
+
+img {
+  display: block;
 }
 
 button {
@@ -37,4 +45,26 @@ button {
 .main-btn:hover {
   color: var(--main-clr);
   background-color: var(--second-clr);
+}
+
+.sect-title {
+  position: relative;
+  padding: 1rem;
+  margin: 0 auto 3rem;
+  width: fit-content;
+  text-transform: uppercase;
+  color: white;
+  background-color: var(--special-clr);
+  box-shadow: 0 0 var(--second-clr);
+  transition: all .5s ease-in-out;
+  transition-property: transform, box-shadow;
+}
+
+.sect-title:hover {
+  transform: translate(-10px, -10px);
+  box-shadow: 10px 10px var(--second-clr);
+}
+
+.bold {
+  font-weight: bold;
 }
