@@ -11,6 +11,7 @@
 
 :root {
   --special-clr: #8F00FF;
+  --special-clr-glass: #9000ff87;
   --special-clr-dark: #310653;
 }
 
@@ -39,6 +40,8 @@ body.light {
   color: black;
   background-color: var(--main-clr);
 }
+
+/* ! ---------- Header Section */
 
 header {
   min-height: 100vh;
@@ -316,6 +319,8 @@ section.landing img {
   }
 }
 
+/* ! ---------- About Me Section */
+
 .about {
   background-color: var(--main-clr-2);
 }
@@ -361,12 +366,6 @@ section.landing img {
   gap: 1rem;
 }
 
-@media (max-width: 880px) {
-  .about .text-box .skills {
-
-  }
-}
-
 .about .text-box p.bold {
   font-size: 1.3rem;
 }
@@ -393,4 +392,68 @@ section.landing img {
 
 .about .text-box .skills li p {
   text-transform: capitalize;
+}
+
+
+/* ! ---------- My projects Section */
+
+.projects {
+}
+
+.projects .container {
+  text-align: center;
+}
+
+.projects .container .projects-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.projects .projects-box .box {
+  position: relative;
+  overflow: hidden;
+}
+
+.projects .box img {
+  max-width: 100%;
+  height: 100%;
+}
+
+.projects .box .overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--special-clr-glass);
+  transition: left .5s ease-in-out;
+}
+
+.projects .projects-box .box:hover .overlay {
+  left: 0;
+}
+
+.projects .box .overlay .view {
+  font-size: 1.5rem;
+  padding: .5rem 2rem;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  cursor: pointer;
+  transition: all .3s ease;
+  transition-property: color, background-color;
+}
+
+.projects .box .overlay .view:hover {
+  color: var(--special-clr-dark);
+  background-color: white;
+}
+
+.projects button.more {
+  margin: 2rem auto 0;
 }

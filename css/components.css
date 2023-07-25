@@ -4,7 +4,7 @@
 }
 
 .sect {
-  padding: 2rem 0;
+  padding: 3rem 0;
 }
 
 @media (min-width: 1400px) {
@@ -56,11 +56,6 @@ button {
   color: white;
   background-color: var(--special-clr);
   box-shadow: 0 0 var(--second-clr);
-  transition: all .5s ease-in-out;
-  transition-property: transform, box-shadow;
-}
-
-.sect-title:hover {
   transform: translate(-10px, -10px);
   box-shadow: 10px 10px var(--second-clr);
 }
