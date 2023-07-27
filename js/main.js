@@ -96,6 +96,8 @@ async function getProjectsData() {
 
       projectsBox.append(box)
     }
+  } else {
+    projectsBox.append("Not Available");
   }
 }
 

@@ -25,7 +25,7 @@ body {
 
 body.dark {
   --main-clr: #242424;
-  --main-clr-2: #292929;
+  --main-clr-2: #262626;
   --second-clr: white;
   --second-clr-2: #fafafa;
   color: white;
@@ -36,7 +36,7 @@ body.light {
   --main-clr: white;
   --main-clr-2: #fafafa;
   --second-clr: #242424;
-  --second-clr-2: #292929;
+  --second-clr-2: #262626;
   color: black;
   background-color: var(--main-clr);
 }
@@ -307,6 +307,7 @@ section.landing .text p span {
 
 section.landing .text .main-btn {
   margin-top: 2rem;
+  width: fit-content;
 }
 
 section.landing img {
@@ -340,7 +341,6 @@ section.landing img {
   flex: 30% 1 1;
   height: 300px;
   width: 100%;
-  background-color: var(--second-clr-2);
 }
 
 @media (max-width: 880px) {
@@ -457,9 +457,71 @@ section.landing img {
   margin: 2rem auto 0;
 }
 
-
 /* ! ---------- Contact Me Section */
 
 .contact {
   background-color: var(--main-clr-2);
+}
+
+.contact .container {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 768px) {
+  .contact .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 300px;
+  }
+}
+
+.contact .container .info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.contact .info ul.nums {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-decoration: 1px underline dotted;
+}
+
+.contact .info ul.nums li a:hover {
+  opacity: .9;
+}
+
+.contact .info ul.socials {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1rem;
+}
+
+.contact .info ul.socials li a {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  color: white;
+  background-color: var(--special-clr);
+  transition: all .2s ease-in-out;
+}
+
+.contact .info ul.socials li a:hover {
+  opacity: .8;
+}
+
+.contact img {
+  width: 100%;
+  max-height: 100%;
+  align-self: center;
+}
+
+footer {
+  padding: 1rem;
+  text-align: center;
 }

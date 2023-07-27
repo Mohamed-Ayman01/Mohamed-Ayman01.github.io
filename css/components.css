@@ -56,8 +56,6 @@ button {
   color: white;
   background-color: var(--special-clr);
   box-shadow: 0 0 var(--second-clr);
-  transform: translate(-10px, -10px);
-  box-shadow: 10px 10px var(--second-clr);
 }
 
 .bold {
