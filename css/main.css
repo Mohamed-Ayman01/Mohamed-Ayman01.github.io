@@ -483,11 +483,14 @@ section.landing img {
   justify-content: center;
 }
 
+.contact .container .info h2 {
+  text-transform: uppercase;
+}
+
 .contact .info ul.nums {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  text-decoration: 1px underline dotted;
 }
 
 .contact .info ul.nums li a:hover {
