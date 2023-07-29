@@ -7,7 +7,7 @@ switchBtns.forEach((btn) => {
     if (body.classList.contains("dark")) {
       body.classList.remove("dark");
       body.classList.add("light");
-      
+
       switchBtnIcons.forEach((icon) => {
         icon.style.left = "75%";
         icon.className = "fas fa-sun";
@@ -15,7 +15,7 @@ switchBtns.forEach((btn) => {
     } else {
       body.classList.remove("light");
       body.classList.add("dark");
-      
+
       switchBtnIcons.forEach((icon) => {
         icon.style.left = "5%";
         icon.className = "fas fa-moon";
@@ -55,7 +55,7 @@ menuLinks.forEach((a) => {
   });
 });
 
-let projectsBox = document.querySelector(".projects .projects-box")
+let projectsBox = document.querySelector(".projects .projects-box");
 let myGithubName = "Mohamed-Ayman01";
 
 async function getProjectsData() {
@@ -67,8 +67,13 @@ async function getProjectsData() {
 
     for (obj of responseObj) {
       // ! Until the border-previewer app is solved hide project
-      if (obj.fork === false && obj.homepage !== null && obj.name !== "Mohamed-Ayman01.github.io" && obj.name !== "Border-Radius-Previewer") {
-        filterdObjs.push(obj)
+      if (
+        obj.fork === false &&
+        obj.homepage !== null &&
+        obj.name !== "Mohamed-Ayman01.github.io" &&
+        obj.name !== "Border-Radius-Previewer"
+      ) {
+        filterdObjs.push(obj);
       }
     }
 
@@ -84,21 +89,28 @@ async function getProjectsData() {
 
       let overlay = document.createElement("div");
       overlay.classList.add("overlay");
-      
+
       let viewLink = document.createElement("a");
       viewLink.textContent = "live view";
       viewLink.classList.add("view", "main-btn");
       viewLink.setAttribute("target", "_blank");
       viewLink.setAttribute("href", obj.homepage);
-      overlay.append(viewLink)
+
+      let title = document.createElement("h3");
+      title.textContent = obj.name;
+
+      let desc = document.createElement("p");
+      desc.textContent = obj.description;
+
+      overlay.append(title, desc, viewLink);
 
       box.append(img, overlay);
 
-      projectsBox.append(box)
+      projectsBox.append(box);
     }
   } else {
-    projectsBox.append("Not Available");
+    console.log(error("failed fetching projects data"));
   }
 }
 
-getProjectsData()
+getProjectsData();
