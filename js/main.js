@@ -70,8 +70,7 @@ async function getProjectsData() {
       if (
         obj.fork === false &&
         obj.homepage !== null &&
-        obj.name !== "Mohamed-Ayman01.github.io" &&
-        obj.name !== "Border-Radius-Previewer"
+        obj.name !== "Mohamed-Ayman01.github.io"
       ) {
         filterdObjs.push(obj);
       }
