@@ -25,17 +25,17 @@ body {
 
 body.dark {
   --main-clr: #242424;
-  --main-clr-2: #262626;
+  --main-clr-2: #202020;
   --second-clr: white;
-  --second-clr-2: #fafafa;
+  --second-clr-2: #f6f6f6;
   color: white;
   background-color: var(--main-clr);
 }
 
 body.light {
   --main-clr: white;
-  --main-clr-2: #fafafa;
-  --second-clr: #242424;
+  --main-clr-2: #f6f6f6;
+  --second-clr: #202020;
   --second-clr-2: #262626;
   color: black;
   background-color: var(--main-clr);
@@ -52,7 +52,7 @@ header {
 
 nav {
   position: relative;
-  border-bottom: 1px solid var(--main-clr-2);
+  border-bottom: 2px solid var(--main-clr-2);
 }
 
 nav .container {
@@ -397,56 +397,58 @@ section.landing img {
 
 /* ! ---------- My projects Section */
 
-.projects .container {
+.projects .projects-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 2rem;
   text-align: center;
 }
 
-.projects .container .projects-box {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
+@media (max-width: 500px) {
+  .projects .projects-box {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
 }
 
 .projects .projects-box .box {
-  height: 350px;
   position: relative;
   overflow: hidden;
-  box-shadow: 5px 5px 12px #3c3c3c9c, 10px 10px var(--special-clr);
+  border: 2px solid var(--special-clr)
 }
 
 .projects .box img {
+  width: 100%;
   max-width: 100%;
-  min-height: 100%;
+  height: 350px;
+  object-fit: cover;
 }
 
 .projects .box .overlay {
   width: 100%;
-  height: 100%;
   position: absolute;
-  top: 0;
-  left: 100%;
+  bottom: 0;
+  left: 0;
   z-index: 10;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
   color: white;
   background-color: var(--special-clr-glass);
-  transition: left .5s ease-in-out;
 }
 
 .projects .box .overlay h3 {
   text-transform: uppercase;
 }
 
-.projects .projects-box .box:hover .overlay {
-  left: 0;
+.projects .box .overlay p {
+  text-transform: lowercase;
 }
 
 .projects .box .overlay .view {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   padding: .5rem 2rem;
   background-color: transparent;
   border: 2px solid white;
@@ -461,9 +463,6 @@ section.landing img {
   background-color: white;
 }
 
-.projects button.more {
-  margin: 2rem auto 0;
-}
 
 /* ! ---------- Contact Me Section */
 

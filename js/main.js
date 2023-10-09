@@ -66,20 +66,16 @@ async function getProjectsData() {
     let filterdObjs = [];
 
     for (obj of responseObj) {
-      // ! Until the border-previewer app is solved hide project
       if (
         obj.fork === false &&
         obj.homepage !== null &&
         obj.name !== "Mohamed-Ayman01.github.io"
-      ) {
-        filterdObjs.push(obj);
+        ) {
+          filterdObjs.push(obj);
+        }
       }
-    }
-
-    for (obj of filterdObjs) {
-      // console.log(`${obj.homepage}project-img.jpg`);
-      // console.log(obj.homepage);
-
+      
+      for (obj of filterdObjs) {
       let box = document.createElement("div");
       box.classList.add("box");
 
