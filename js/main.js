@@ -76,30 +76,47 @@ async function getProjectsData() {
       }
       
       for (obj of filterdObjs) {
+      console.log(obj)
+
       let box = document.createElement("div");
       box.classList.add("box");
+
+      let imgBox = document.createElement("div");
+      imgBox.classList.add("img-box");
 
       let img = document.createElement("img");
       img.setAttribute("src", `${obj.homepage}project-img.jpg`);
 
-      let overlay = document.createElement("div");
-      overlay.classList.add("overlay");
+      imgBox.append(img)
 
-      let viewLink = document.createElement("a");
-      viewLink.textContent = "live view";
-      viewLink.classList.add("view", "main-btn");
-      viewLink.setAttribute("target", "_blank");
-      viewLink.setAttribute("href", obj.homepage);
+      let textBox = document.createElement("div");
+      textBox.classList.add("text");
 
       let title = document.createElement("h3");
-      title.textContent = obj.name;
+      title.textContent = `${obj.name}`.split("-").join(" ");
 
       let desc = document.createElement("p");
       desc.textContent = obj.description;
 
-      overlay.append(title, desc, viewLink);
+      let links = document.createElement("div");
+      links.className = "links";
 
-      box.append(img, overlay);
+      let viewLink = document.createElement("a");
+      viewLink.innerHTML = `<i class="fas fa-arrow-up-right-from-square"></i>`;
+      viewLink.classList.add("view", "main-btn");
+      viewLink.setAttribute("target", "_blank");
+      viewLink.setAttribute("href", obj.homepage);
+
+      let repoLink = document.createElement("a");
+      repoLink.innerHTML = `<i class="fab fa-github"></i>`;
+      repoLink.setAttribute("target", "_blank");
+      repoLink.setAttribute("href", obj.html_url);
+
+      links.append(viewLink, repoLink)
+
+      textBox.append(title, desc, links);
+
+      box.append(imgBox, textBox);
 
       projectsBox.append(box);
     }
