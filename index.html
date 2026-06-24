@@ -1,392 +1,47 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mohamed E. Ayman — Front-End Developer</title>
+    
+    <!-- SEO Optimization -->
+    <meta name="description" content="Mohamed E. Ayman is a professional Front-End Developer based in UAE, specializing in React, JavaScript, responsive web design, and interactive UI/UX development. View his portfolio, projects, and skills." />
+    <meta name="keywords" content="Mohamed E. Ayman, Front-End Developer, React Developer, JavaScript Developer, Web Developer, Web Designer, Portfolio, UAE Developer, Frontend, UI/UX" />
+    <meta name="author" content="Mohamed E. Ayman" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://mohamed-ayman01.github.io/" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="initial-scale=1,width=device-width" />
-  <meta name="description"
-    content="Mohamed E. Ayman — Front-End Developer crafting beautiful, performant web experiences." />
-  <title>Mohamed E. Ayman — Front-End Developer</title>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mohamed-ayman01.github.io/" />
+    <meta property="og:title" content="Mohamed E. Ayman — Front-End Developer Portfolio" />
+    <meta property="og:description" content="Explore the developer portfolio of Mohamed E. Ayman, a professional Front-End Developer specializing in building high-performance, modern, and beautiful React web applications." />
+    <meta property="og:image" content="/coding.png" />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://mohamed-ayman01.github.io/" />
+    <meta name="twitter:title" content="Mohamed E. Ayman — Front-End Developer Portfolio" />
+    <meta name="twitter:description" content="Explore the developer portfolio of Mohamed E. Ayman, a professional Front-End Developer specializing in React and JavaScript." />
+    <meta name="twitter:image" content="/coding.png" />
 
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
 
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-
-  <!-- ═══════════════════════════════════════════════
-         NAVBAR
-    ════════════════════════════════════════════════ -->
-  <nav id="navbar">
-    <div class="nav-container">
-      <a href="#home" class="nav-logo">
-        <span class="logo-bracket">&lt;</span>MEA<span class="logo-bracket">/&gt;</span>
-      </a>
-
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#home" class="nav-link active">Home</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-
-      <div class="nav-actions">
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-          <i class="fas fa-moon" id="theme-icon"></i>
-        </button>
-        <button class="hamburger" id="hamburger" aria-label="Open menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-
-    <!-- Mobile menu -->
-    <div class="mobile-menu" id="mobile-menu">
-      <ul>
-        <li><a href="#home" class="mobile-link">Home</a></li>
-        <li><a href="#about" class="mobile-link">About</a></li>
-        <li><a href="#skills" class="mobile-link">Skills</a></li>
-        <li><a href="#projects" class="mobile-link">Projects</a></li>
-        <li><a href="#contact" class="mobile-link">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- ═══════════════════════════════════════════════
-         HERO
-    ════════════════════════════════════════════════ -->
-  <section id="home" class="hero">
-    <div class="hero-bg">
-      <div class="blob blob-1"></div>
-      <div class="blob blob-2"></div>
-      <div class="blob blob-3"></div>
-      <div class="grid-overlay"></div>
-    </div>
-
-    <div class="hero-content">
-      <div class="hero-text">
-        <p class="hero-greeting">👋 Hello, I'm</p>
-        <h1 class="hero-name">Mohamed E. Ayman</h1>
-        <div class="hero-role">
-          <span class="role-prefix">I'm a </span>
-          <span class="typed-text" id="typed-text"></span>
-          <span class="cursor-blink">|</span>
-        </div>
-        <p class="hero-bio">
-          A passionate Front-End Developer who loves building beautiful,
-          responsive web experiences. Always learning, always building.
-        </p>
-        <div class="hero-cta">
-          <a href="#projects" class="btn btn-primary">
-            <i class="fas fa-rocket"></i> View My Work
-          </a>
-          <a href="#contact" class="btn btn-outline">
-            <i class="fas fa-paper-plane"></i> Contact Me
-          </a>
-        </div>
-        <div class="hero-socials">
-          <a href="https://github.com/Mohamed-Ayman01" target="_blank" class="social-link" aria-label="GitHub">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/mohamed-elmustafa-ayman/" target="_blank" class="social-link"
-            aria-label="LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-          <a href="mailto:mohamedelmustafaayman@gmail.com" class="social-link" aria-label="Email">
-            <i class="fas fa-envelope"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="hero-image">
-        <div class="image-ring">
-          <div class="image-glow"></div>
-          <img src="./imgs/profile.png" alt="Mohamed E. Ayman — Front-End Developer" class="profile-img" />
-        </div>
-        <div class="floating-badge badge-1">
-          <i class="fas fa-code"></i> Open to Work
-        </div>
-        <div class="floating-badge badge-2">
-          <i class="fas fa-star"></i> Front-End Dev
-        </div>
-      </div>
-    </div>
-
-    <a href="#about" class="scroll-indicator">
-      <i class="fas fa-chevron-down"></i>
-    </a>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════
-         ABOUT
-    ════════════════════════════════════════════════ -->
-  <section id="about" class="about section">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">Who I Am</span>
-        <h2 class="section-title">About <span class="accent">Me</span></h2>
-        <p class="section-subtitle">A passionate developer building the digital future</p>
-      </div>
-
-      <div class="about-grid">
-        <div class="about-image-wrap reveal">
-          <div class="about-img-frame">
-            <img src="./imgs/profile.png" alt="Mohamed E. Ayman" />
-            <div class="about-img-deco"></div>
-          </div>
-          <div class="about-stats">
-            <div class="stat-card">
-              <span class="stat-number" data-target="10">0</span><span class="stat-plus">+</span>
-              <span class="stat-label">Projects</span>
-            </div>
-            <div class="stat-card">
-              <span class="stat-number" data-target="4">0</span><span class="stat-plus">+</span>
-              <span class="stat-label">Years Exp.</span>
-            </div>
-            <div class="stat-card">
-              <span class="stat-number" data-target="5">0</span><span class="stat-plus">+</span>
-              <span class="stat-label">Clients</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="about-text reveal">
-          <h3>Front-End Developer &amp; UI Enthusiast</h3>
-          <p>
-            Hi! I'm <strong>Mohamed Elmustafa Ayman</strong>, a Front-End Developer
-            passionate about crafting clean, beautiful, and highly responsive web experiences.
-            I focus on writing quality code and turning creative ideas into reality.
-          </p>
-          <p>
-            When I'm not coding, I'm exploring new technologies, contributing to projects,
-            and sharpening my skills to stay at the cutting edge of web development.
-          </p>
-
-          <div class="about-details">
-            <div class="detail-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <span><strong>Location:</strong> UAE</span>
-            </div>
-            <div class="detail-item">
-              <i class="fas fa-graduation-cap"></i>
-              <span><strong>Focus:</strong> Front End Development</span>
-            </div>
-            <div class="detail-item">
-              <i class="fab fa-github"></i>
-              <span><strong>GitHub:</strong> Mohamed-Ayman01</span>
-            </div>
-            <div class="detail-item">
-              <i class="fas fa-circle check"></i>
-              <span><strong>Status:</strong> Available for work</span>
-            </div>
-          </div>
-
-          <a href="https://github.com/Mohamed-Ayman01" target="_blank" class="btn btn-primary">
-            <i class="fab fa-github"></i> View GitHub
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════
-         SKILLS
-    ════════════════════════════════════════════════ -->
-  <section id="skills" class="skills section alt-section">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">What I Know</span>
-        <h2 class="section-title">My <span class="accent">Skills</span></h2>
-        <p class="section-subtitle">Technologies and tools I work with</p>
-      </div>
-
-      <div class="skills-grid">
-        <!-- Tech icons -->
-        <div class="tech-icons reveal">
-          <div class="tech-card" title="HTML5">
-            <i class="fab fa-html5" style="color:#E34F26"></i>
-            <span>HTML5</span>
-          </div>
-          <div class="tech-card" title="CSS3">
-            <i class="fab fa-css3-alt" style="color:#1572B6"></i>
-            <span>CSS3</span>
-          </div>
-          <div class="tech-card" title="JavaScript">
-            <i class="fab fa-js-square" style="color:#F7DF1E"></i>
-            <span>JavaScript</span>
-          </div>
-          <div class="tech-card" title="Sass">
-            <i class="fab fa-sass" style="color:#CC6699"></i>
-            <span>Sass</span>
-          </div>
-          <div class="tech-card" title="Bootstrap">
-            <i class="fab fa-bootstrap" style="color:#7952B3"></i>
-            <span>Bootstrap</span>
-          </div>
-          <div class="tech-card" title="Git">
-            <i class="fab fa-git-alt" style="color:#F05032"></i>
-            <span>Git</span>
-          </div>
-        </div>
-
-        <!-- Coding illustration -->
-        <div class="skills-illustration reveal">
-          <img src="./imgs/coding.png" alt="Coding illustration" class="coding-img" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════
-         PROJECTS
-    ════════════════════════════════════════════════ -->
-  <section id="projects" class="projects section">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">What I've Built</span>
-        <h2 class="section-title">My <span class="accent">Projects</span></h2>
-        <p class="section-subtitle">Fetched live from my GitHub — always up to date</p>
-      </div>
-
-      <!-- Loading state -->
-      <div class="projects-loading" id="projects-loading">
-        <div class="loading-spinner"></div>
-        <p>Loading projects from GitHub…</p>
-      </div>
-
-      <!-- Error state -->
-      <div class="projects-error" id="projects-error" style="display:none;">
-        <i class="fas fa-exclamation-circle"></i>
-        <p>Could not load projects. <a href="https://github.com/Mohamed-Ayman01" target="_blank">View on GitHub →</a>
-        </p>
-      </div>
-
-      <!-- Projects grid (populated by JS) -->
-      <div class="projects-grid" id="projects-grid"></div>
-
-      <div class="projects-more reveal" id="projects-more" style="display:none;">
-        <a href="https://github.com/Mohamed-Ayman01?tab=repositories" target="_blank" class="btn btn-outline">
-          <i class="fab fa-github"></i> View All on GitHub
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════
-         CONTACT
-    ════════════════════════════════════════════════ -->
-  <section id="contact" class="contact section alt-section">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">Get In Touch</span>
-        <h2 class="section-title">Contact <span class="accent">Me</span></h2>
-        <p class="section-subtitle">Have a project in mind? Let's talk!</p>
-      </div>
-
-      <div class="contact-grid">
-        <div class="contact-info reveal">
-          <div class="contact-card">
-            <div class="contact-icon">
-              <i class="fas fa-map-marker-alt"></i>
-            </div>
-            <div>
-              <h4>Location</h4>
-              <p>UAE</p>
-            </div>
-          </div>
-          <div class="contact-card">
-            <div class="contact-icon">
-              <i class="fas fa-envelope"></i>
-            </div>
-            <div>
-              <h4>Email</h4>
-              <p>dev.mohamedayman0@gmail.com</p>
-            </div>
-          </div>
-          <div class="contact-card">
-            <div class="contact-icon">
-              <i class="fab fa-github"></i>
-            </div>
-            <div>
-              <h4>GitHub</h4>
-              <p>Mohamed-Ayman01</p>
-            </div>
-          </div>
-
-          <div class="contact-socials">
-            <a href="https://github.com/Mohamed-Ayman01" target="_blank" class="social-btn github"><i
-                class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/mohamed-elmustafa-ayman/" target="_blank"
-              class="social-btn linkedin"><i class="fab fa-linkedin-in"></i></a>
-          </div>
-        </div>
-
-        <form class="contact-form reveal" id="contact-form" novalidate>
-          <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" placeholder="John Doe" required />
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="john@example.com" required />
-          </div>
-          <div class="form-group">
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" placeholder="Project Inquiry" required />
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..."
-              required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
-            <i class="fas fa-paper-plane"></i>
-            <span id="submit-text">Send Message</span>
-          </button>
-          <div class="form-success" id="form-success">
-            <i class="fas fa-check-circle"></i> Message sent! I'll get back to you soon.
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════
-         FOOTER
-    ════════════════════════════════════════════════ -->
-  <footer class="footer">
-    <div class="container">
-      <p>
-        Designed &amp; Built by <span class="accent">Mohamed E. Ayman</span>
-        &nbsp;·&nbsp;
-        <span id="footer-year"></span>
-      </p>
-      <!-- <p class="footer-sub">Made with <i class="fas fa-heart" style="color:#f43f5e"></i> and lots of ☕</p> -->
-    </div>
-  </footer>
-
-  <!-- Scroll to top -->
-  <button class="scroll-top" id="scroll-top" aria-label="Scroll to top">
-    <i class="fas fa-arrow-up"></i>
-  </button>
-
-  <!-- Cursor glow -->
-  <div class="cursor-glow" id="cursor-glow"></div>
-
-  <!-- EmailJS SDK -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script src="script.js"></script>
-</body>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body class="bg-black">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
